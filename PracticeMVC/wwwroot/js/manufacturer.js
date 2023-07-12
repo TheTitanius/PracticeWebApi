@@ -75,7 +75,7 @@ document.getElementById("deleteBtn").addEventListener("click", async () => {
     });
     if (response.ok === true) {
         const manufacturer = await response.json();
-        document.querySelector(`tr[data-rowid='${manufacturer.manufacturerId}']`).remove();
+        document.querySelector(`tr[data-rowid='${manufacturer.id}']`).remove();
     }
     else {
         const error = await response.json();

@@ -1,15 +1,5 @@
 ﻿const apiName = "clients";
 
-var allClientsCheckbox = document.getElementById("allClients");
-allClientsCheckbox.addEventListener("change", hideButtons);
-
-function hideButtons() {
-    var radioButtons = document.getElementById("radioButtons").getElementsByTagName('*');
-    for (var node of radioButtons) {
-        node.disabled = this.checked;
-    }
-}
-
 // отправка формы
 document.getElementById("saveBtn").addEventListener("click", async () => {
     let clientId = "";
@@ -109,7 +99,7 @@ document.getElementById("deleteBtn").addEventListener("click", async () => {
     });
     if (response.ok === true) {
         const client = await response.json();
-        document.querySelector(`tr[data-rowid='${client.clientId}']`).remove();
+        document.querySelector(`tr[data-rowid='${client.id}']`).remove();
     }
     else {
         const error = await response.json();
