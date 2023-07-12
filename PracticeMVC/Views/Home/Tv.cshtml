@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <h2>Телевизоры</h2>
+    <table width="100%">
+        <thead>
+            <tr class="head">
+                <th>Id</th>
+                <th>Название</th>
+				<th>Цена</th>
+				<th>На складе</th>
+				<th>Продано</th>
+				<th>Поставлено</th>
+                <th>Тип</th>
+                <th>Производитель</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div width="100%" class="buttons">
+        <button id="add" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Добавить телевизор</button>
+        <button id="edit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" disabled>Изменить</button>
+        <button id="delete" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" disabled>Удалить телевизор</button>
+    </div>
+
+    <div id="addModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить/Изменить телевизор</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Название:<br />
+                        <input id="name" />
+                    </p>
+                    <p>
+                        Цена за штуку:<br />
+                        <input id="price" />
+                    </p>
+                    <p>
+                        Тип телевизора:<br />
+                        <input id="tvType" />
+                    </p>
+                    <p>
+                        Производитель:<br />
+                        <input id="manufacturer" />
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Добавить/Изменить</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Удалить телевизор</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Вы точно хотите удалить Телевизор?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button id="deleteBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/tv.js" asp-append-version="true"></script>

@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <h2>Клиенты</h2>
+    <div>
+        <div class="buttons">
+            <input type="checkbox" id="allClients" checked/>
+            <label for="allClients">Все клиенты</label>
+        </div>
+        <div id="radioButtons" class="radioButtons">
+            <div class="buttons">
+                <input type="radio" name="clientType" id="payingClients" disabled="disabled" checked="checked"/>
+                <label for="payingClients" disabled="disabled">Оплатившие клиенты</label>
+            </div>
+            <div class="buttons">
+                <input type="radio" name="clientType" id="notPayingClients" disabled="disabled" />
+                <label for="payingClients" disabled="disabled">Не оплатившие клиенты</label>
+            </div>
+            <select disabled="disabled" width="100%"></select>
+        </div>
+    </div>
+    <table width="100%">
+        <thead>
+            <tr class="head">
+                <th>Id</th>
+                <th>ФИО</th>
+                <th>Телефон</th>
+                <th>Банковский счет</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div width="100%" class="buttons">
+        <button id="add" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Добавить клиента</button>
+        <button id="edit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" disabled>Изменить</button>
+        <button id="delete" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" disabled>Удалить клиента</button>
+    </div>
+
+    <div id="addModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить/Изменить клиента</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        ФИО:<br />
+                        <input id="fullName" />
+                    </p>
+                    <p>
+                        Телефон:<br />
+                        <input id="telephone" />
+                    </p>
+                    <p>
+                        Номер банковского счета:<br />
+                        <input id="bankAccount" />
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Добавить/Изменить</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Удалить клиента</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Вы точно хотите удалить клиента?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button id="deleteBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/client.js" asp-append-version="true"></script>
