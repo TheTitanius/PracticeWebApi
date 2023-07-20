@@ -61,13 +61,13 @@ namespace PracticeMVC
 
             app.MapGet("/api/clients/{clientId:int}", async (int clientId, Context db) =>
             {
-                // получаем пользователя по id
+                //Получаем клиента по id
                 Client? client = await db.Clients.FirstOrDefaultAsync(u => u.Id == clientId);
 
-                // если не найден, отправляем статусный код и сообщение об ошибке
+                //Если не найден, отправляем статусный код и сообщение об ошибке
                 if (client == null) return Results.NotFound(new { message = "Клиент не найден" });
 
-                // если пользователь найден, отправляем его
+                //Если пользователь найден, отправляем его
                 return Results.Json(client);
             });
 

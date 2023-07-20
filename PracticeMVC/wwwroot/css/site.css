@@ -30,19 +30,6 @@ select{
     width: 400px;
 }
 
-table {
-    border: 1px solid grey;
-}
-
-th {
-    border: 1px solid grey;
-}
-
-td {
-    border: 1px solid black;
-    padding: 5px;
-}
-
 .active {
     background-color: cornflowerblue;
 }

@@ -3,13 +3,13 @@
 }
 <div>
     <h2>Клиенты</h2>
-    <table width="100%">
+    <table width="100%" class="table table-striped table-hover table-bordered">
         <thead>
             <tr class="head">
-                <th>Id</th>
-                <th>ФИО</th>
-                <th>Телефон</th>
-                <th>Банковский счет</th>
+                <th scope="col">Id</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Телефон</th>
+                <th scope="col">Банковский счет</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -28,18 +28,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <p>
-                        ФИО:<br />
-                        <input id="fullName" />
-                    </p>
-                    <p>
-                        Телефон:<br />
-                        <input id="telephone" />
-                    </p>
-                    <p>
-                        Номер банковского счета:<br />
-                        <input id="bankAccount" />
-                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">ФИО:</span>
+                        <input type="text" class="form-control" required id="fullName" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Телефон:</span>
+                        <input type="text" class="form-control" required id="telephone" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Номер банковского счета:</span>
+                        <input type="number" class="form-control" required id="bankAccount" />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button id="saveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Добавить/Изменить</button>

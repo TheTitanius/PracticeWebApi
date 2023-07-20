@@ -3,14 +3,14 @@
 }
 <div>
     <h2>Производители</h2>
-    <table width="100%">
+    <table width="100%" class="table table-striped table-hover table-bordered">
         <thead>
             <tr class="head">
-                <th>Id</th>
-                <th>Название</th>
-                <th>Директор</th>
-                <th>Главный бухгалтер</th>
-                <th>Банковские реквизиты</th>
+                <th scope="col">Id</th>
+                <th scope="col">Название</th>
+                <th scope="col">Директор</th>
+                <th scope="col">Главный бухгалтер</th>
+                <th scope="col">Банковские реквизиты</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -29,22 +29,22 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <p>
-                        Название:<br />
-                        <input id="name"  />
-                    </p>
-                    <p>
-                        Фамилия директора:<br />
-                        <input id="director" />
-                    </p>
-                    <p>
-                        Фамилия главбуха:<br />
-                        <input id="chiefAccountant" />
-                    </p>
-                    <p>
-                        Номер банковского счета:<br />
-                        <input id="bankDetails" />
-                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Название:</span>
+                        <input type="text" class="form-control" required id="name" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Фамилия директора:</span>
+                        <input type="text" class="form-control" required id="director" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Фамилия главбуха:</span>
+                        <input type="text" class="form-control" required id="chiefAccountant" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Номер банковского счета:</span>
+                        <input type="number" class="form-control" required id="bankDetails" />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button id="saveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Добавить/Изменить</button>
